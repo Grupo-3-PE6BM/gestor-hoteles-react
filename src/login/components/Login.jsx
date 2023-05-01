@@ -48,6 +48,7 @@ export const Login = () => {
             <h3
               className="fw-normal mt-5 mb-3 ps-5 pb-3"
               style={{ letterSpacing: "0px" }}
+              id="iniciar-sesion"
             >
               Iniciar Sesion
             </h3>
