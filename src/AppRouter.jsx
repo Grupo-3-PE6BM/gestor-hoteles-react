@@ -6,13 +6,18 @@ import { NavBar } from "./NavBar";
 import { isUserAuthenticated } from "../src/login/helpers/loginHelper";
 import { Footer } from "./Footer";
 import { MainPage } from "./main-page/components/MainPage";
+import { Hoteles } from "./hoteles/components/Hoteles";
+import { Eventos } from "./eventos/components/Eventos";
+import { Servicios } from "./servicios/components/Servicios";
 
 export const AppRouter = () => {
   const acepta = true;
   return (
     <>
+      {/* NavBar */}
       <NavBar></NavBar>
 
+      {/* Pagina Principal */}
       <Routes>
         <Route
           path="/"
@@ -25,6 +30,43 @@ export const AppRouter = () => {
           }
         ></Route>
 
+        {/* Hoteles */}
+        <Route
+          path="/hoteles"  
+          element={
+            isUserAuthenticated() ? (
+              <Hoteles></Hoteles>
+            ) : (
+              <Navigate to="/login"></Navigate>
+            )
+          }
+        ></Route>
+
+        {/* Hoteles */}
+        <Route
+          path="/servicios"  
+          element={
+            isUserAuthenticated() ? (
+              <Servicios></Servicios>
+            ) : (
+              <Navigate to="/login"></Navigate>
+            )
+          }
+        ></Route>
+
+        {/* Eventos */}
+        <Route
+          path="/eventos"  
+          element={
+            isUserAuthenticated() ? (
+              <Eventos></Eventos>
+            ) : (
+              <Navigate to="/login"></Navigate>
+            )
+          }
+        ></Route>
+
+        {/* Pagina Registro */}
         <Route
           path="/registro"
           element={
@@ -36,6 +78,7 @@ export const AppRouter = () => {
           }
         ></Route>
 
+        {/* Pagina Login */}
         <Route
           path="/login"
           element={
@@ -48,6 +91,7 @@ export const AppRouter = () => {
         ></Route>
       </Routes>
 
+      {/* Footer */}
       <Footer></Footer>
     </>
   );

@@ -44,34 +44,38 @@ export const NavBar = () => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Inicio
-                  </a>
-                </li>
 
+                <Link className="nav-item-active" to='/hoteles'>
                 <li className="nav-item">
-                  <a className="nav-link active" href="#">
+                  <a className="nav-link active" id="link">
                     Hoteles
                   </a>
                 </li>
+                </Link>
 
-                <li className="nav-item">
-                  <a className="nav-link active" href="#">
-                    Ofertas
-                  </a>
-                </li>
 
+                <Link className="nav-item-active" to='/servicios'>
                 <li className="nav-item">
-                  <a className="nav-link active" href="#">
+                  <a className="nav-link active" id="link">
                     Servicios
                   </a>
                 </li>
+                </Link>
 
+                <Link className="nav-item-active" to='/eventos'>
                 <li className="nav-item">
-                  <a className="nav-link active" href="#">
+                  <a className="nav-link active" id="link">
                     Eventos
                   </a>
+                </li>
+                </Link>
+              </ul>
+
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-link">
+                  <div id="demo-b" >
+                    <input type="search" placeholder="Search" />
+                  </div>
                 </li>
               </ul>
 
