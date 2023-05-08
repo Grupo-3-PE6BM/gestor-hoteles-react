@@ -6,9 +6,12 @@ import { NavBar } from "./NavBar";
 import { isUserAuthenticated } from "../src/login/helpers/loginHelper";
 import { Footer } from "./Footer";
 import { MainPage } from "./main-page/components/MainPage";
-import { Hoteles } from "./hoteles/components/Hoteles";
 import { Eventos } from "./eventos/components/Eventos";
 import { Servicios } from "./servicios/components/Servicios";
+import { ListaHoteles } from "./hoteles/components/ListaHoteles";
+import { Profile } from "./perfil/components/Profile";
+import { Habitaciones } from "./habitaciones/components/Habitaciones";
+
 
 export const AppRouter = () => {
   const acepta = true;
@@ -32,19 +35,31 @@ export const AppRouter = () => {
 
         {/* Hoteles */}
         <Route
-          path="/hoteles"  
+          path="/hoteles"
           element={
             isUserAuthenticated() ? (
-              <Hoteles></Hoteles>
+              <ListaHoteles></ListaHoteles>
             ) : (
               <Navigate to="/login"></Navigate>
             )
           }
         ></Route>
 
-        {/* Hoteles */}
+        {/* Habitaciones */}
         <Route
-          path="/servicios"  
+          path="/habitaciones"
+          element={
+            isUserAuthenticated() ? (
+              <Habitaciones></Habitaciones>
+            ) : (
+              <Navigate to="/login"></Navigate>
+            )
+          }
+        ></Route>
+
+        {/* Servicios */}
+        <Route
+          path="/servicios"
           element={
             isUserAuthenticated() ? (
               <Servicios></Servicios>
@@ -56,7 +71,7 @@ export const AppRouter = () => {
 
         {/* Eventos */}
         <Route
-          path="/eventos"  
+          path="/eventos"
           element={
             isUserAuthenticated() ? (
               <Eventos></Eventos>
@@ -86,6 +101,18 @@ export const AppRouter = () => {
               <Login></Login>
             ) : (
               <Navigate to="/"></Navigate>
+            )
+          }
+        ></Route>
+
+        {/* Mi perfil */}
+        <Route
+          path="/perfil"
+          element={
+            isUserAuthenticated() ? (
+              <Profile></Profile>
+            ) : (
+              <Navigate to="/login"></Navigate>
             )
           }
         ></Route>

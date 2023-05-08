@@ -44,36 +44,45 @@ export const NavBar = () => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
-                <Link className="nav-item-active" to='/hoteles'>
-                <li className="nav-item">
-                  <a className="nav-link active" id="link">
-                    Hoteles
-                  </a>
-                </li>
+                <Link className="nav-item-active" to="/hoteles">
+                  <li className="nav-item">
+                    <a className="nav-link active" id="link">
+                      Hoteles
+                    </a>
+                  </li>
                 </Link>
 
-
-                <Link className="nav-item-active" to='/servicios'>
-                <li className="nav-item">
-                  <a className="nav-link active" id="link">
-                    Servicios
-                  </a>
-                </li>
+                <Link className="nav-item-active" to="/servicios">
+                  <li className="nav-item">
+                    <a className="nav-link active" id="link">
+                      Servicios
+                    </a>
+                  </li>
                 </Link>
 
-                <Link className="nav-item-active" to='/eventos'>
-                <li className="nav-item">
-                  <a className="nav-link active" id="link">
-                    Eventos
-                  </a>
-                </li>
+                <Link className="nav-item-active" to="/eventos">
+                  <li className="nav-item">
+                    <a className="nav-link active" id="link">
+                      Eventos
+                    </a>
+                  </li>
                 </Link>
+
+                <Link className="nav-item-active" to="/habitaciones">
+                  <li className="nav-item">
+                    <a className="nav-link active" id="link">
+                      Habitaciones
+                    </a>
+                  </li>
+                </Link>
+
               </ul>
+
+              
 
               <ul className="navbar-nav ms-auto">
                 <li className="nav-link">
-                  <div id="demo-b" >
+                  <div id="demo-b">
                     <input type="search" placeholder="Search" />
                   </div>
                 </li>
@@ -92,6 +101,15 @@ export const NavBar = () => {
                   </li>
                 )}
               </ul>
+
+              <ul className="navbar-nav ms-auto">
+                <button className="btn btn-second ">
+                  <Link className="nav-item-active" to="/perfil">
+                    Mi Perfil
+                  </Link>
+                </button>
+              </ul>
+              
             </div>
           </div>
         </nav>

@@ -1219,3 +1219,21 @@ body {
   letter-spacing: 0px;
   line-height: 1.4;
 }
+
+
+#prueba{
+  align-items: center;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+}
+
+#card{
+  align-items: center;
+  margin-bottom: 50%;
+  align-content: flex-start;
+  margin-left: 25%;
+  position: relative;
+  
+}
+
