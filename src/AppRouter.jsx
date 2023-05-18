@@ -6,12 +6,14 @@ import { NavBar } from "./NavBar";
 import { isUserAuthenticated } from "../src/login/helpers/loginHelper";
 import { Footer } from "./Footer";
 import { MainPage } from "./main-page/components/MainPage";
-import { Eventos } from "./eventos/components/Eventos";
+import { CreateHabitacion } from "./habitaciones/components/AgregarHabitacion";
+import { ListaHabitaciones } from "./habitaciones/components/ListaHabitaciones";
 import { Servicios } from "./servicios/components/Servicios";
 import { ListaHoteles } from "./hoteles/components/ListaHoteles";
+import { ListaEventos } from "./eventos/components/ListaEventos";
 import { Profile } from "./perfil/components/Profile";
-import { Habitaciones } from "./habitaciones/components/Habitaciones";
-
+import { CreateHotel } from "./hoteles/components/AgregarHotel";
+import { CreateEvento } from "./eventos/components/AgregarEvento";
 
 export const AppRouter = () => {
   const acepta = true;
@@ -44,17 +46,29 @@ export const AppRouter = () => {
             )
           }
         ></Route>
+        
+        {/* Agregar Hotel */}
+        <Route
+        path="/agregarHotel"
+        element={acepta ? <CreateHotel /> : <Navigate to="/login" />}
+        ></Route>
 
         {/* Habitaciones */}
         <Route
           path="/habitaciones"
           element={
             isUserAuthenticated() ? (
-              <Habitaciones></Habitaciones>
+              <ListaHabitaciones></ListaHabitaciones>
             ) : (
               <Navigate to="/login"></Navigate>
             )
           }
+        ></Route>
+
+        {/* Agregar Habitacion */}
+        <Route
+        path="/agregarHabitacion"
+        element={acepta ? <CreateHabitacion /> : <Navigate to="/login" />}
         ></Route>
 
         {/* Servicios */}
@@ -69,16 +83,22 @@ export const AppRouter = () => {
           }
         ></Route>
 
-        {/* Eventos */}
-        <Route
+       {/* Eventos */}
+       <Route
           path="/eventos"
           element={
             isUserAuthenticated() ? (
-              <Eventos></Eventos>
+              <ListaEventos></ListaEventos>
             ) : (
               <Navigate to="/login"></Navigate>
             )
           }
+        ></Route>
+        
+        {/* Agregar Evento */}
+        <Route
+        path="/agregarEvento"
+        element={acepta ? <CreateEvento /> : <Navigate to="/login" />}
         ></Route>
 
         {/* Pagina Registro */}
