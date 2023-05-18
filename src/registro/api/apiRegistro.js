@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 export const apiRegistro = async (nombre, correo, password) => {
   try {
-    const URL = 'http://localhost:8080/api/usuarios/agregarAdmin';
+    const URL = 'http://localhost:8080/api/usuarios/agregarUsuario';
 
     const response = await axios.post(URL, {
       nombre,

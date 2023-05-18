@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+
+export const formSchema = Yup.object().shape({
+    nombre: Yup.string().required("El nombre de la persona es requerido"),
+    correo: Yup.string()
+      .required("El correo del usuario es requerido"),
+  });
+
+export const formOptions = { resolver: yupResolver(formSchema) };
+
 import {
   MDBBtn,
   MDBContainer,
@@ -16,12 +27,14 @@ export const Register = () => {
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
 
+  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/usuarios/agregarAdmin",
+        "http://localhost:8080/api/usuarios/agregarUsuario",
         {
           nombre,
           correo,
@@ -137,5 +150,3 @@ export const Register = () => {
     </MDBContainer>
   );
 };
-
-export default Register;

@@ -1,6 +1,8 @@
 import React from "react";
 import { isUserAuthenticated } from "../src/login/helpers/loginHelper";
 import { Link } from "react-router-dom";
+import { MDBBtn } from "mdb-react-ui-kit";
+import { Button } from "react-bootstrap";
 
 export const NavBar = () => {
   const logOut = () => {
@@ -9,7 +11,7 @@ export const NavBar = () => {
   };
   return (
     <>
-      {isUserAuthenticated() && (
+
         <nav
           className="navbar navbar-expand-lg navbar-light bg-light"
           data-bs-theme="dark"
@@ -76,44 +78,81 @@ export const NavBar = () => {
                   </li>
                 </Link>
 
-              </ul>
-
-              
-
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-link">
-                  <div id="demo-b">
-                    <input type="search" placeholder="Search" />
-                  </div>
-                </li>
-              </ul>
-
-              <ul className="navbar-nav ms-auto">
-                {localStorage.getItem("token") && (
+                <Link className="nav-item-active" to="/reservacion">
                   <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      to="/login"
-                      onClick={() => logOut()}
-                    >
-                      Cerrar Sesión
+                    <a className="nav-link active" id="link">
+                      Reservacion
                     </a>
                   </li>
-                )}
+                </Link>
+
+                <Link className="nav-item-active" to="/buscar">
+                  <li className="nav-item">
+                    <a className="nav-link active" id="link">
+                      Buscar
+                    </a>
+                  </li>
+                </Link>
+
               </ul>
 
-              <ul className="navbar-nav ms-auto">
-                <button className="btn btn-second ">
-                  <Link className="nav-item-active" to="/perfil">
-                    Mi Perfil
-                  </Link>
+              <div className="btn-group">
+                <button type="button" className="btn btn-primary">
+                  Perfil
                 </button>
-              </ul>
-              
+                <button
+                  type="button"
+                  className="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span className="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <button className="btn btn-second ">
+                      <Link className="nav-item-active" to="/perfil">
+                        Mi Perfil
+                      </Link>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button className="btn btn-second ">
+                      <Link className="nav-item-active" to="/login">
+                        Iniciar Sesion
+                      </Link>
+                    </button>
+                  </li>
+
+
+
+                  <li>
+                    {localStorage.getItem("token") && (
+                      <form className="w-25">
+                        <Link
+                          aria-current="page"
+                          to="/"
+                          onClick={() => logOut()}
+                        >
+                          <Button
+                            color="warning"
+                            aria-current="page"
+                            to="/"
+                            onClick={() => logOut()}
+                          >
+                            Cerrar Sesion{" "}
+                          </Button>
+                        </Link>
+                      </form>
+                    )}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>
-      )}
+    
     </>
   );
 };

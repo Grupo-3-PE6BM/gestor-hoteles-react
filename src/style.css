@@ -1237,3 +1237,141 @@ body {
   
 }
 
+#boton-hoteles{
+  margin-right: 7px;
+}
+
+#boton-evento{
+  margin-left: 5px;
+}
+
+.card-img {
+  height: auto;
+  max-width: 100%;
+}
+
+#titulo-reservacion{
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+
+.img-fluid {
+  border-radius: 8px 0 0 8px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
+  
+  .img-fluid {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  position: relative;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+#tit{
+  text-align: center;
+  margin-top: 2%;
+}
+
+#tito{
+  margin-right: 1%;
+}
+
+#hola{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}

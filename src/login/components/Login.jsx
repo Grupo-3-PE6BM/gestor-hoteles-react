@@ -28,7 +28,19 @@ export const Login = () => {
         confirmButtonText: "Ok",
       }).then((r) => {
         if (r.isConfirmed) {
-          window.location.href = "/";
+          const [header, payload, signature] = result.split(".");
+          const decodedPayload = JSON.parse(atob(payload));
+          console.log(decodedPayload);
+          const rolUsuario = decodedPayload.rol;
+          
+          console.log(rolUsuario);
+          if (rolUsuario === "DEV_ROLE") {
+            window.location.href = "/principalDev";
+          } else if (rolUsuario === "ADMIN_ROLE") {
+            window.location.href = "/principalAdmin";
+          } else {
+            window.location.href = "/hoteles";
+          }
         }
       });
     }
@@ -91,7 +103,20 @@ export const Login = () => {
 
               <p className="ms-5">
                 Aun no tienes una cuenta?{" "}
-                <a href="/registro" class="link-info">
+                <a href="/registro" className="link-info">
+                  Registrate Aqui
+                </a>
+              </p>
+              <p className="ms-5">
+                Aun no tienes una cuenta de admin?{" "}
+                <a href="/registroAdmin" className="link-info">
+                  Registrate Aqui
+                </a>
+              </p>
+
+              <p className="ms-5">
+                Aun no tienes una cuenta de dev?{" "}
+                <a href="/registroDev" className="link-info">
                   Registrate Aqui
                 </a>
               </p>
