@@ -62,11 +62,15 @@ export const AppRouter = () => {
           path="/servicios"
           element={
             isUserAuthenticated() ? (
-              <Servicios></Servicios>
+              <ListaServicios></ListaServicios>
             ) : (
               <Navigate to="/login"></Navigate>
             )
           }
+        ></Route>
+        <Route
+        path="/agregarServicio"
+        element={acepta ? <CreateServicio /> : <Navigate to="/login" />}
         ></Route>
 
         {/* Eventos */}
